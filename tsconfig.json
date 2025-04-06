@@ -1,0 +1,25 @@
+//typescript 설정 파일
+{
+  "compilerOptions": {
+    // javascript compile version 설정
+    "target": "ESNext",
+    // module system option 설정
+    "module": "CommonJS",
+    // compile된 javascript 파일을 저장할 디렉토리 설정
+    "outDir": "dist",
+    // 타입 검사에 대한 option 설정
+    "strict": false,
+    // typescript 각각의 파일이 어떤 모듈로 검사할 것인지 설정, typescript는 기본적으로 전역 모듈
+    "moduleDetection": "force",
+    // 불 필요한 타입 정의 파일의 타입 검사를 생략하기위해 설정, @types 20version 이상에서 발생
+    "skipLibCheck": true,
+    // 변수에 null값 허용을 위한 옵션 설정, default: true
+    "strictNullChecks": false
+  },
+  // ts-node는 기본적으로 commonjs 사용. es module system으로 설정
+  "ts-node": {
+    "esm": true
+  },
+  // src 폴더에 있는 모든 파일 compile
+  "include": ["src"]
+}
