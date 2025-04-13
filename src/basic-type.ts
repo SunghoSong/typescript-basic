@@ -143,3 +143,34 @@ const user1 = {
 }
 
 console.log("user1", user1);
+
+
+// any Type- 특정 변수의 타입을 우리가 확실히 모를 때
+let anyVar: any = 10;
+
+// unknown Type
+// let unKnownVar: unKnown;
+
+let num: number = 100;
+let unKnownVar: unknown;
+unKnownVar = num;
+
+if(typeof unKnownVar === "undefined") {
+    num = unKnownVar;
+}
+
+//void
+function func1(): string {
+    return "sho";
+}
+
+function func2(): void{
+    console.log(func1());
+}
+
+func2()
+
+//never - 반환 불가능한 함수
+function func3(): never{
+    throw new Error()
+}
