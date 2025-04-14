@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // main.ts
 const core_1 = require("@nestjs/core");
 const app_module_1 = require("./app.module");
+const swagger_1 = require("@nestjs/swagger");
 function bootstrap() {
     return __awaiter(this, void 0, void 0, function* () {
         const app = yield core_1.NestFactory.create(app_module_1.AppModule);
@@ -24,6 +25,15 @@ function bootstrap() {
             };
             next();
         });
+        // Swagger 설정
+        const config = new swagger_1.DocumentBuilder()
+            .setTitle('My API') // API 제목
+            .setDescription('API description') // API 설명
+            .setVersion('1.0') // 버전
+            .addTag('users') // 태그 추가
+            .build();
+        const document = swagger_1.SwaggerModule.createDocument(app, config); // Swagger 문서 생성
+        swagger_1.SwaggerModule.setup('api', app, document); // 'api' 경로에서 Swagger 문서 확인
         yield app.listen(3000);
     });
 }
