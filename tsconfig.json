@@ -1,8 +1,14 @@
 //typescript 설정 파일
 {
   "compilerOptions": {
+    "target": "ES6",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "types": ["node"],
     // javascript compile version 설정
-    "target": "ESNext",
+//    "target": "ESNext",
     // module system option 설정
     "module": "CommonJS",
     // compile된 javascript 파일을 저장할 디렉토리 설정
