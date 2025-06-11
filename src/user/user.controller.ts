@@ -16,7 +16,7 @@ export class UserController {
         return this.userService.findOne(+id);
     }
 
-    /*@Post()
+    @Post()
     createUser(@Body() body: { name: string; email: string }) {
         return this.userService.create(body);
     }
@@ -24,5 +24,5 @@ export class UserController {
     @Delete(':id')
     deleteUser(@Param('id') id: string) {
         return this.userService.delete(+id);
-    }*/
+    }
 }
